@@ -4,6 +4,6 @@ class User < ApplicationRecord
   has_many :likes
 
   def self.show_recent_posts(user)
-    return user.posts.limit(3)
+    return user.posts.order('created_at DESC').limit(3)
   end
 end
