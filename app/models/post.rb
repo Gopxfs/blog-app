@@ -1,13 +1,13 @@
 class Post < ApplicationRecord
-  has_many :likes
-  has_many :comments
+  has_many :likes, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
-  belongs_to :user
+  belongs_to :author, class_name: 'User', foreign_key: :user_id
 
   after_save :update_posts_counter
 
   def update_posts_counter
-    user.update(posts_counter: user.posts.length)
+    author.update(posts_counter: author.posts.length)
   end
 
   def show_recent_comments
