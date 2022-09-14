@@ -4,8 +4,10 @@ class Post < ApplicationRecord
 
   belongs_to :user
 
+  after_save :update_posts_counter
+
   def update_posts_counter
-    user.posts_counter = user.posts.length
+    user.update(posts_counter: user.posts.length)
   end
 
   def show_recent_comments
