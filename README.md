@@ -18,7 +18,7 @@ gem install bundler
 bundle install
 
 - Run ruby app in the Command Line:
-ruby main.rb
+rails s
 
 ### Usage
 
