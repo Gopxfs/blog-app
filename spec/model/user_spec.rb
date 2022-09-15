@@ -27,7 +27,7 @@ RSpec.describe User, type: :model do
       expect(subject.posts_counter).to be >= 0
     end
   end
-  
+
   describe '#show_recent_posts' do
     it 'should return the last 3 posts' do
       subject.posts.create(title: 'title', text: 'text', comments_counter: 0, likes_counter: 0)
@@ -38,5 +38,4 @@ RSpec.describe User, type: :model do
       expect(subject.show_recent_posts.count).to eq(3)
     end
   end
-
 end
