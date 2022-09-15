@@ -48,7 +48,7 @@ RSpec.describe Post, type: :model do
     it 'should be an integer' do
       expect(subject.likes_counter).to be_an_integer
     end
-    
+
     it 'should be greater than or equal to 0' do
       expect(subject.likes_counter).to be >= 0
     end
