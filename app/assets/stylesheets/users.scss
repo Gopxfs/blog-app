@@ -1,7 +1,33 @@
-#user-card {
+#users {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
 
+#user-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-self: center;
+  width: 95%;
+  max-width: 600px;
+  margin: 12px;
+  padding: 15px;
+  gap: 5%;
+  border: 1px solid;
+  border-radius: 5px;
+  background-color: rgb(134, 230, 201);
+
+  img {
+    border: 2px solid;
+  }
 }
 
 #user-info {
-  
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-right: 8px;
 }
