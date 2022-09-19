@@ -8,7 +8,6 @@ gem 'rails', '~> 7.0.4'
 
 # scss
 gem 'sassc-rails', '>= 2.1.0'
-gem 'sassc', '>= 2.0'
 
 # rubocop
 gem 'rubocop', '>= 1.0', '< 2.0'

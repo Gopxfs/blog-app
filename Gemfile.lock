@@ -272,7 +272,6 @@ DEPENDENCIES
   rails (~> 7.0.4)
   rspec-rails
   rubocop (>= 1.0, < 2.0)
-  sassc (>= 2.0)
   sassc-rails (>= 2.1.0)
   selenium-webdriver
   sprockets-rails
