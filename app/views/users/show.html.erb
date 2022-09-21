@@ -1,5 +1,5 @@
 <section id='user-profile'>
-  <a href= '/users'><-- Back to users list</a>
+  <%= link_to '<-- Back to users list', users_url%>
   <div id='user-card-full'>
     <h1><%= @user.name %>'s Profile</h1>
     <div id='user-bio'>

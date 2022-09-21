@@ -1,4 +1,5 @@
 <section id='post'>
+  <%= link_to "<-- Back to user's profile", user_url(@post.author)%>
   <div id='post-card-full'>
     <div id='post-header'>
       <h2>"<%= @post.title %>" by <%= @post.author.name %></h2>
@@ -6,6 +7,7 @@
     </div>
     <p><%= @post.text %></p>
   </div>
+
   <div id='comments'>
     <% @comments.each do |comment| %>
       <p> <%= comment.author.name %>: <%= comment.text %></p>
