@@ -1,5 +1,10 @@
 <section id='post'>
   <div id='post-card-full'>
+    <div id='post-header'>
+      <h2>"<%= @post.title %>" by <%= @post.author.name %></h2>
+      <p> <%= @post.comments_counter%> comments, <%= @post.likes_counter%> likes </p>
+    </div>
+    <p><%= @post.text %></p>
   </div>
   <div id='comments'>
     <% @comments.each do |comment| %>
