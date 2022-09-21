@@ -1,1 +1,9 @@
-<h1> Post </h1>
+<section id='post'>
+  <div id='post-card-full'>
+  </div>
+  <div id='comments'>
+    <% @comments.each do |comment| %>
+      <p> <%= comment.author.name %>: <%= comment.text %></p>
+    <% end %>
+  </div>
+</section>
