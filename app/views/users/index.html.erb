@@ -1,6 +1,5 @@
 <section id="users">
   <h1>Users list</h1>
-  <% @users = User.all %>
   <% @users.each do |user| %>
     <%= link_to user_url(user), id: 'user-card',:action => 'go' do %>
         <img src=<%= user.photo %> alt="User <%= user.id %> picture" width="150" height="150">
