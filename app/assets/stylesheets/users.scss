@@ -16,7 +16,18 @@
   gap: 5%;
   border: 1px solid;
   border-radius: 5px;
+  text-decoration: none;
   background-color: rgb(134, 230, 201);
+  filter: grayscale(85%);
+
+  &:visited {
+    color: inherit;
+  }
+
+  &:hover {
+    transform: scale(1.01);
+    filter: grayscale(0%)
+  }
 
   img {
     border: 2px solid;
