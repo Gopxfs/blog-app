@@ -2,12 +2,15 @@
   <h1>Users list</h1>
   <% @users = User.all %>
   <% @users.each do |user| %>
-    <a id="user-card" href="/users/<%= user.id %>">
-      <img src=<%= user.photo %> alt="User <%= user.id %> picture" width="150" height="150">
-      <div id="user-info">
-        <h2><%= user.name %></h2>
-        <p>Number of posts: <%= user.posts_counter %></p>
-      </div>
-    </a>
+    <%= link_to user_url(user), id: 'user-card',:action => 'go' do %>
+        <img src=<%= user.photo %> alt="User <%= user.id %> picture" width="150" height="150">
+        <div id="user-info">
+          <h2><%= user.name %></h2>
+          <p>Number of posts: <%= user.posts_counter %></p>
+        </div>
+    <% end %>
   <% end %>
 </section>
+
+
+<%# href="/users/<%= user.id" %> %>
