@@ -12,8 +12,7 @@
   </div>
 
   <div id='posts-list'>
-    <% recent_posts = @user.show_recent_posts%>
-    <% recent_posts.each do |post| %>
+    <% @user.show_recent_posts.each do |post| %>
       <%= render 'shared/post_card', post: post%>
     <% end %>
 
