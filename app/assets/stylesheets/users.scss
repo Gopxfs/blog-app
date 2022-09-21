@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 #users {
   display: flex;
   flex-direction: column;
@@ -17,7 +19,7 @@
   border: 1px solid;
   border-radius: 5px;
   text-decoration: none;
-  background-color: rgb(134, 230, 201);
+  background-color: $main-color;
   filter: grayscale(85%);
 
   &:visited {
