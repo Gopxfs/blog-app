@@ -10,6 +10,7 @@
         I've created <%= @user.posts_counter %> posts in total.
       </p>
     </div>
+    <%= link_to 'Create new post', new_user_post_url(@user) %>
   </div>
 
   <div id='posts-list'>
@@ -18,11 +19,7 @@
     <% end %>
 
     <% if @user.posts_counter > 3 %>
-      <%= link_to user_posts_url(@user), :action => 'go' do %>
-        <div>
-          See all posts
-        </div>
-      <% end %>
+      <%= link_to 'See all posts', user_posts_url(@user)%>
     <% end %>
   </div>
 </section>
