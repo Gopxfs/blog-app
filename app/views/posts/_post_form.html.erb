@@ -1,4 +1,4 @@
-<%= form_with model: @post do |form| %>
+<%= form_with model: @post, url: user_posts_path, method: :post, local: true, scope: :post do |form| %>
   <%= form.text_field :title, placeholder: 'Title'%>
   <%= form.text_area :text, placeholder: 'Share what you are thinking' %>
   <%= form.submit 'Create post'%>
