@@ -14,7 +14,7 @@ class PostsController < ApplicationController
     @post = Post.new
     @user = current_user
     respond_to do |format|
-      format.html { render :new, locals: { post: @post }}
+      format.html { render :new, locals: { post: @post } }
     end
   end
 
@@ -31,8 +31,8 @@ class PostsController < ApplicationController
           flash[:success] = 'Post created successfully!'
           redirect_to user_url(author)
         else
-          flash.now[:error] = "Error: Post could not be created."
-          render :new, locals: { post: post }, status: 422
+          flash.now[:error] = 'Error: Post could not be created.'
+          render :new, locals: { post: }, status: 422
         end
       end
     end

@@ -12,7 +12,7 @@ class LikesController < ApplicationController
           flash[:success] = 'You liked this post!'
           redirect_to user_post_url(author, post)
         else
-          flash.now[:error] = "Error: Post could not be liked."
+          flash.now[:error] = 'Error: Post could not be liked.'
         end
       end
     end

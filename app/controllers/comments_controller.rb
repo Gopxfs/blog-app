@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
           flash[:success] = 'Comment created successfully!'
           redirect_to user_post_url(author, post)
         else
-          flash.now[:error] = "Error: Comment could not be created."
+          flash.now[:error] = 'Error: Comment could not be created.'
         end
       end
     end
