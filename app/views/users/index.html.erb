@@ -1,13 +1,6 @@
 <section id="users">
   <h1>Users list</h1>
-  <% @users = User.all %>
   <% @users.each do |user| %>
-    <div id="user-card">
-      <img src=<%= user.photo %> alt="User <%= user.id %> picture" width="150" height="150">
-      <div id="user-info">
-        <h2><%= user.name %></h2>
-        <p>Number of posts: <%= user.posts_counter %></p>
-      </div>
-    </div>
+      <%= render "shared/user_card", user: user %>
   <% end %>
 </section>

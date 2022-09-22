@@ -1,1 +1,16 @@
-<h1> Post </h1>
+<section id='post'>
+  <%= link_to "<-- Back to user's profile", user_url(@post.author)%>
+  <div id='post-card-full'>
+    <div id='post-header'>
+      <h2>"<%= @post.title %>" by <%= @post.author.name %></h2>
+      <p> <%= @post.comments_counter%> comments, <%= @post.likes_counter%> likes </p>
+    </div>
+    <p><%= @post.text %></p>
+  </div>
+
+  <div id='comments'>
+    <% @comments.each do |comment| %>
+      <p> <%= comment.author.name %>: <%= comment.text %></p>
+    <% end %>
+  </div>
+</section>

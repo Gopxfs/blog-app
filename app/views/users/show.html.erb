@@ -1,1 +1,28 @@
-<h1> User </h1>
+<section id='user-profile'>
+  <%= link_to '<-- Back to users list', users_url%>
+  <div id='user-card-full'>
+    <h1><%= @user.name %>'s Profile</h1>
+    <div id='user-bio'>
+      <img src=<%= @user.photo %> alt="User <%= @user.id %> picture" width="225" height="225">
+      <p>
+        <%= @user.bio %>
+        <br>
+        I've created <%= @user.posts_counter %> posts in total.
+      </p>
+    </div>
+  </div>
+
+  <div id='posts-list'>
+    <% @user.show_recent_posts.each do |post| %>
+      <%= render 'shared/post_card', post: post%>
+    <% end %>
+
+    <% if @user.posts_counter > 3 %>
+      <%= link_to user_posts_url(@user), :action => 'go' do %>
+        <div>
+          See all posts
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</section>

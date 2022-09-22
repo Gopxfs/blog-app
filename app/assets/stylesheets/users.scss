@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 #users {
   display: flex;
   flex-direction: column;
@@ -5,7 +7,7 @@
   align-items: center;
 }
 
-#user-card {
+.user-card {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -16,14 +18,25 @@
   gap: 5%;
   border: 1px solid;
   border-radius: 5px;
-  background-color: rgb(134, 230, 201);
+  text-decoration: none;
+  background-color: $main-color;
+  filter: grayscale(85%);
+
+  &:visited {
+    color: inherit;
+  }
+
+  &:hover {
+    transform: scale(1.01);
+    filter: grayscale(0%);
+  }
 
   img {
     border: 2px solid;
   }
 }
 
-#user-info {
+.user-info {
   display: flex;
   flex-direction: row;
   align-items: center;

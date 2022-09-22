@@ -1,1 +1,11 @@
-<h1> Posts </h1>
+<section id='posts'>
+  <%= render 'shared/user_card', user: @user %>
+  <% @posts.each do |post| %>
+    <%= render 'shared/post_card', post: post%>
+    <div class='recent-comments'>
+      <% post.show_recent_comments.each do |comment| %>
+        <p><%= comment.author.name %>: <%= comment.text %></p>
+      <% end %>
+    </div>
+  <% end %>
+</section>
