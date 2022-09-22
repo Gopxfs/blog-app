@@ -14,4 +14,7 @@
     <% end %>
   </div>
   <%= render "comments/comment_form" %>
+  <%= form_with url: user_post_likes_url(@user, @post), method: 'post' do |form| %>
+    <% form.submit 'Like' %>
+  <% end %>
 </section>
