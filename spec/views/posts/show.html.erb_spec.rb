@@ -1,7 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'user_post_path', type: :system do
-
+RSpec.describe 'posts #show', type: :feature do
         before :each do
         @user = User.create(
           name: 'Gabriel',
@@ -26,23 +25,23 @@ RSpec.describe 'user_post_path', type: :system do
 
     describe 'post show page' do
       it 'shows the post\'s title' do
-        expect(page).to have_content(User.last.posts.first.title)
+        expect(page).to have_content(@post.title)
       end
   
       it 'shows who wrote the post' do
-        expect(page).to have_content(User.last.name)
+        expect(page).to have_content(@user.name)
       end
   
       it 'shows how many comments there are on a post' do
-        expect(page).to have_content(User.last.posts.first.comments.count)
+        expect(page).to have_content(@post.comments.count)
       end
 
         it 'shows how many likes there are on a post' do
-        expect(page).to have_content(User.last.posts.first.likes.count)
+        expect(page).to have_content(@post.likes.count)
       end
 
       it 'shows the post body' do
-        
+        e
       end
     end
   end
