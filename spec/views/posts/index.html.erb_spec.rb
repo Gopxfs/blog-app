@@ -11,7 +11,7 @@ RSpec.describe 'posts #index', type: :feature do
         Post.create(author: @user, title: 'Title', text: 'Text', comments_counter: 0, likes_counter: 0)
         Post.create(author: @user, title: 'Title2', text: 'Text2', comments_counter: 0, likes_counter: 0)
         Post.create(author: @user, title: 'Title3', text: 'Text3', comments_counter: 0, likes_counter: 0)
-        Post.create(author: @user, title: 'Title4', text: 'Text4', comments_counter: 0, likes_counter: 0)
+        @post = Post.create(author: @user, title: 'Title4', text: 'Text4', comments_counter: 0, likes_counter: 0)
         User.create(
           name: '1st',
           photo: 'https://www.pexels.com/photo/silhouette-of-a-person-on-a-swing-3293148/',
@@ -29,15 +29,30 @@ RSpec.describe 'posts #index', type: :feature do
     end
 
     it 'can display a post title' do
-            expect(page).to have_content(@user.posts.last.title)
+            expect(page).to have_content(@post.title)
     end
 
     it 'can display a post body' do
-            expect(page).to have_content(@user.posts.last.text)
+            expect(page).to have_content(@post.text)
+    end
+
+    it 'displays the first comments in a post' do
+      comments = @post.comments
+      comments.each do |comment|
+        expect(page).to have_content(comment.text)
+      end
+    end
+
+    it 'displays the number of comments in a post' do
+      expect(page).to have_content(@post.comments_counter)
+    end
+
+    it 'displays the number of likes in a post' do
+      expect(page).to have_content(@post.likes_counter)
     end
 
     it 'redirects the user to the post show page' do
-            click_link(@user.posts.last.title)
-            expect(current_path).to eq("/users/#{@user.id}/posts/#{@user.posts.last.id}")
+            click_link(@post.title)
+            expect(current_path).to eq("/users/#{@user.id}/posts/#{@post.id}")
     end
 end
