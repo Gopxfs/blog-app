@@ -23,7 +23,7 @@ RSpec.describe Like, type: :model do
 
   describe '#update_likes_counter' do
     it 'should update the likes counter' do
-      expect(subject.send(:update_likes_counter)).to eq(true)
+      expect(subject.send(:update_likes_counter).likes_counter).to eq(subject.post.likes_counter)
     end
   end
 end

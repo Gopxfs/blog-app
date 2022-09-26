@@ -24,7 +24,7 @@ RSpec.describe Comment, type: :model do
 
   describe '#update_comments_counter' do
     it 'should update the comments counter' do
-      expect(subject.send(:update_comments_counter)).to eq(true)
+      expect(subject.send(:update_comments_counter).comments_counter).to eq(subject.post.comments_counter)
     end
   end
 end

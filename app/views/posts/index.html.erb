@@ -3,7 +3,7 @@
   <% @posts.each do |post| %>
     <%= render 'shared/post_card', post: post%>
     <div class='recent-comments'>
-      <% post.show_recent_comments.each do |comment| %>
+      <% post.show_recent_comments.includes(:author).each do |comment| %>
         <p><%= comment.author.name %>: <%= comment.text %></p>
       <% end %>
     </div>

@@ -9,7 +9,7 @@
   </div>
 
   <div id='comments'>
-    <% @comments.each do |comment| %>
+    <% @comments.includes(:author).each do |comment| %>
       <p> <%= comment.author.name %>: <%= comment.text %></p>
     <% end %>
   </div>
