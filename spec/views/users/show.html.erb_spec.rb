@@ -71,7 +71,7 @@ RSpec.describe 'users #show', type: :feature do
   end
 
   it 'redirects the user to the post show page' do
-    click_link("#{@user.posts.last.title}")
+    click_link(@user.posts.last.title.to_s)
     expect(current_path).to eq("/users/#{@user.id}/posts/#{@user.posts.last.id}")
   end
 end

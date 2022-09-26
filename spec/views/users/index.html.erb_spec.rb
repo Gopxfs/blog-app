@@ -9,11 +9,11 @@ RSpec.describe 'users #index', type: :feature do
       posts_counter: 0
     )
     user2 = User.create(
-        name: 'Second User',
-        photo: 'https://www.pexels.com/photo/silhouette-of-a-person-on-a-swing-3293148/',
-        bio: "I'm not a student at Microverse",
-        posts_counter: 0
-      )
+      name: 'Second User',
+      photo: 'https://www.pexels.com/photo/silhouette-of-a-person-on-a-swing-3293148/',
+      bio: "I'm not a student at Microverse",
+      posts_counter: 0
+    )
     @users = [user1, user2]
     visit '/users'
   end
@@ -27,7 +27,7 @@ RSpec.describe 'users #index', type: :feature do
   end
 
   it 'changes to user profile after clicking on a card' do
-    click_link("#{@users.first.name}")
-    expect(page).to have_content("Profile")
+    click_link(@users.first.name.to_s)
+    expect(page).to have_content('Profile')
   end
 end
