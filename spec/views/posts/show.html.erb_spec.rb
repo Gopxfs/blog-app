@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 RSpec.describe 'user_post_path', type: :system do
 
         before :each do
