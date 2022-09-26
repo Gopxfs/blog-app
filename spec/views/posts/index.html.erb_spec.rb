@@ -22,35 +22,22 @@ RSpec.describe 'posts #index', type: :feature do
         visit "/users/#{@user.id}"
     end
 
-    it 'displays all users cards' do
-        @users.each do |user|
-          expect(page).to have_content(user.name)
-          expect(page).to have_css("img[src*='#{user.photo}']")
-          expect(page).to have_content("Number of posts: #{user.posts_counter}")
-        end
+    it 'displays user info' do
+        expect(page).to have_content(@user.name)
+        expect(page).to have_css("img[src*='#{@user.photo}']")
+        expect(page).to have_content("#{@user.posts_counter}")
     end
 
-    it 'can display all posts' do
-        @users.each do |user|
-            click_link(user.name.to_s)
-            expect(page).to have_content('Title')
-            expect(page).to have_content('Title2')
-            expect(page).to have_content('Title3')
-        end
+    it 'can display a post title' do
+            expect(page).to have_content(@user.posts.last.title)
     end
 
-    it 'can display the first post content' do
-        @users.each do |user|
-            click_link(user.name.to_s)
-            expect(page).to have_content('Text')
-        end
+    it 'can display a post body' do
+            expect(page).to have_content(@user.posts.last.text)
     end
 
     it 'redirects the user to the post show page' do
-        @users.each do |user|
-            click_link(user.name.to_s)
-            click_link('Title')
-            expect(current_path).to eq("/users/#{user.id}/posts/#{user.posts.first.id}")
-        end
+            click_link(@user.posts.last.title)
+            expect(current_path).to eq("/users/#{@user.id}/posts/#{@user.posts.last.id}")
     end
 end
