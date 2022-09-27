@@ -46,8 +46,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_27_171420) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.string "photo"
-    t.text "bio"
+    t.string "photo", default: "https://cdn-icons-png.flaticon.com/512/1159/1159797.png?w=740&t=st=1664309258~exp=1664309858~hmac=705ab1c49b60057e9dd8c91730e992f4b727b726801774c150f8916922ed039c"
+    t.text "bio", default: "I'm a new user"
     t.integer "posts_counter", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -60,6 +60,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_27_171420) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
+    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
