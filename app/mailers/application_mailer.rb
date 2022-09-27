@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'from@example.com'
+  default form: "gopxblogapp@outlook.com"
   layout 'mailer'
 end
