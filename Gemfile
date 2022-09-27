@@ -6,6 +6,9 @@ ruby '3.1.2'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.4'
 
+# devise
+gem 'devise'
+
 # scss
 gem 'sassc-rails', '>= 2.1.0'
 
