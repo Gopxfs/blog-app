@@ -1,5 +1,6 @@
 <section id="users">
   <h1>Users list</h1>
+  <h2><%= "Logged in as: #{@current_user ? @current_user.name : 'none'}" %> </h2>
   <% @users.each do |user| %>
       <%= render "shared/user_card", user: user %>
   <% end %>

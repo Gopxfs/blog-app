@@ -6,6 +6,12 @@ ruby '3.1.2'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.4'
 
+# devise
+gem 'devise'
+
+# figaro
+gem 'figaro'
+
 # scss
 gem 'sassc-rails', '>= 2.1.0'
 
@@ -71,6 +77,7 @@ group :development do
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 
+  gem 'letter_opener'
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
