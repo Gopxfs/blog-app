@@ -9,6 +9,9 @@ gem 'rails', '~> 7.0.4'
 # devise
 gem 'devise'
 
+# figaro
+gem 'figaro'
+
 # scss
 gem 'sassc-rails', '>= 2.1.0'
 
