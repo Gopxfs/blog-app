@@ -3,10 +3,10 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  protected
+  private
 
   def configure_permitted_parameters
-    default_parameters = [:name, :email, :password, :encrypted_password, :password_confirmation, :current_password]
+    default_parameters = [:name, :bio, :photo, :password]
     devise_parameter_sanitizer.permit(:sign_up, keys: default_parameters)
     devise_parameter_sanitizer.permit(:sign_in, keys: default_parameters)
     devise_parameter_sanitizer.permit(:account_update, keys: default_parameters)
