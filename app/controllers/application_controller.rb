@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   private
 
   def configure_permitted_parameters
-    default_parameters = [:name, :bio, :photo, :password]
+    default_parameters = %i[name bio photo password]
     devise_parameter_sanitizer.permit(:sign_up, keys: default_parameters)
     devise_parameter_sanitizer.permit(:sign_in, keys: default_parameters)
     devise_parameter_sanitizer.permit(:account_update, keys: default_parameters)
