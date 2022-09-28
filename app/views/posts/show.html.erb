@@ -3,7 +3,7 @@
   <div id='post-card-full'>
     <div id='post-header'>
       <h2>"<%= @post.title %>" by <%= @post.author.name %></h2>
-      <% if @user == @post.author || @user.role == "admin" %>
+      <% if can? :delete_post, @post %>
         <%= button_to "Delete post", user_post_path, method: :delete %>
       <% end %>
       <p> <%= @post.comments_counter%> comments, <%= @post.likes_counter%> likes </p>
@@ -15,7 +15,7 @@
     <% @comments.includes(:author).each do |comment| %>
       <div>
         <p> <%= comment.author.name %>: <%= comment.text %></p>
-        <% if @user == comment.author || @user.role == "admin" %>
+        <% if can? :delete_comment, comment %>
           <%= button_to "Delete comment", user_post_comment_url(comment.author, @post, comment), method: :delete %>
         <% end %>
       </div>
