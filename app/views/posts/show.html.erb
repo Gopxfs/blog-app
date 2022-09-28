@@ -15,6 +15,7 @@
     <% @comments.includes(:author).each do |comment| %>
       <div>
         <p> <%= comment.author.name %>: <%= comment.text %></p>
+        <%= "#{time_ago_in_words(comment.created_at)} ago"%>
         <% if can? :delete_comment, comment %>
           <%= button_to "Delete comment", user_post_comment_url(comment.author, @post, comment), method: :delete %>
         <% end %>
