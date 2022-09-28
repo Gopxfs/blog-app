@@ -12,7 +12,11 @@
 
   <div id='comments'>
     <% @comments.includes(:author).each do |comment| %>
-      <p> <%= comment.author.name %>: <%= comment.text %></p>
+      <div>
+        <p> <%= comment.author.name %>: <%= comment.text %></p>
+        <%= button_to "Delete comment", user_post_comment_url(comment.author, @post, comment), method: :delete %>
+      </div>
+      
     <% end %>
   </div>
   <%= render "comments/comment_form" %>
