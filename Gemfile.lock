@@ -110,6 +110,10 @@ GEM
       warden-jwt_auth (~> 0.6)
     diff-lcs (1.5.0)
     digest (3.1.0)
+    dotenv (2.8.1)
+    dotenv-rails (2.8.1)
+      dotenv (= 2.8.1)
+      railties (>= 3.2)
     dry-auto_inject (0.9.0)
       dry-container (>= 0.3.4)
     dry-configurable (0.15.0)
@@ -325,6 +329,7 @@ DEPENDENCIES
   debug
   devise
   devise-jwt
+  dotenv-rails
   figaro
   importmap-rails
   jbuilder
