@@ -10,5 +10,11 @@ Rails.application.routes.draw do
 
   resources :main, only: [:index]
 
+  namespace :api do
+    resources :users, only: [:index]
+    resources :posts, only: [:index]
+    resources :comments, only: [:index, :create]
+  end
+
   root to: "users#index"
 end
