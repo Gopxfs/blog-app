@@ -6,6 +6,7 @@ class UsersController < ApplicationController
     @current_user = current_user
 
     respond_to do |format|
+      format.html
       format.json { render :json => @users }
     end
   end
