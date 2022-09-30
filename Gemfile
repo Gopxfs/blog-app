@@ -24,6 +24,10 @@ gem 'bcrypt'
 # SCSS
 gem 'sassc-rails', '>= 2.1.0'
 
+# RWSAG for API documentation
+gem 'rswag-api'
+gem 'rswag-ui'
+
 # Rubocop
 gem 'rubocop', '>= 1.0', '< 2.0'
 
@@ -75,6 +79,7 @@ group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'rails-controller-testing'
   gem 'rspec-rails'
+  gem 'rswag-specs'
 end
 
 group :development do
