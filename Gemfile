@@ -24,6 +24,10 @@ gem 'bcrypt'
 # SCSS
 gem 'sassc-rails', '>= 2.1.0'
 
+# RWSAG for API documentation
+gem 'rswag-api'
+gem 'rswag-ui'
+
 # Rubocop
 gem 'rubocop', '>= 1.0', '< 2.0'
 
@@ -75,6 +79,7 @@ group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'rails-controller-testing'
   gem 'rspec-rails'
+  gem 'rswag-specs'
 end
 
 group :development do
@@ -82,9 +87,6 @@ group :development do
   gem 'bullet'
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'web-console'
-
-  # RSWAG for API documentation
-  gem 'rswag'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
