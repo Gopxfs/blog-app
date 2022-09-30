@@ -13,8 +13,8 @@ class Api::CommentsController < ApplicationController
   def create
     comment = Comment.create(
       text: params[:text],
-      author: User.find(1),
-      post: Post.find(10)
+      author: current_user,
+      post: Post.find(params[:post_id])
     )
 
     render json: comment
